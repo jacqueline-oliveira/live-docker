@@ -1,0 +1,19 @@
+spring:
+  config:
+    import:
+      - aws-secretsmanager:feedback/postgresdb
+      - aws-secretsmanager:feedback/documentdb
+
+  datasource:
+    url: jdbc:postgresql://${host}:${port}/${dbInstanceIdentifier}
+    username: ${username}
+    password: ${password}
+
+  data:
+    mongodb:
+      uri: mongodb://${username}:${password}@${host}:${port}/feedbackdb?tls=true&retryWrites=false
+
+cloud:
+  aws:
+    region:
+      static: sa-east-1

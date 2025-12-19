@@ -1,7 +1,7 @@
 package br.com.unipds.feedback.infrastructure.adapter.outbound.repositories.mapper;
 
 import br.com.unipds.feedback.domain.FeedbackDomain;
-import br.com.unipds.feedback.infrastructure.adapter.outbound.repositories.entities.FeedbackDocumentEntity;
+import br.com.unipds.feedback.infrastructure.adapter.outbound.repositories.mongo.entities.FeedbackDocumentEntity;
 
 public class FeedbackDocumentMapper {
 

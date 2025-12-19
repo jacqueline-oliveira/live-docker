@@ -1,0 +1,51 @@
+services:
+
+  postgres:
+    image: postgres:15
+    container_name: feedback-container-pg
+    environment:
+      POSTGRES_DB: feedbackdb
+      POSTGRES_USER: docker
+      POSTGRES_PASSWORD: docker
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - feedback-network
+
+  mongo:
+    image: mongo:6.0
+    container_name: feedback-container-mongo
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - feedback-network
+
+  app:
+    image: jacquetech/feedback-app
+    container_name: feedback-container-app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+      - mongo
+    environment:
+      SPRING_PROFILES_ACTIVE: local
+      SPRING_DATASOURCE_URL:  jdbc:postgresql://postgres:5432/feedbackdb
+      SPRING_DATASOURCE_USERNAME: docker
+      SPRING_DATASOURCE_PASSWORD: docker
+      SPRING_DATA_MONGODB_URI:  mongodb://mongo:27017/feedbackdb
+      AWS_REGION: sa-east-1
+    networks:
+      - feedback-network
+
+volumes:
+  postgres_data:
+  mongo_data:
+
+networks:
+  feedback-network:
+    driver: bridge

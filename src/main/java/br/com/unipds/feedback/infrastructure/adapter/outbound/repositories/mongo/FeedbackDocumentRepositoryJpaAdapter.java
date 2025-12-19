@@ -1,10 +1,10 @@
-package br.com.unipds.feedback.infrastructure.adapter.outbound.repositories.jpa;
+package br.com.unipds.feedback.infrastructure.adapter.outbound.repositories.mongo;
 
 import br.com.unipds.feedback.application.port.output.FeedbackRepositoryPort;
 import br.com.unipds.feedback.domain.FeedbackDomain;
-import br.com.unipds.feedback.infrastructure.adapter.outbound.repositories.entities.FeedbackDocumentEntity;
-import br.com.unipds.feedback.infrastructure.adapter.outbound.repositories.jpa.repository.FeedbackDocumentRepository;
 import br.com.unipds.feedback.infrastructure.adapter.outbound.repositories.mapper.FeedbackDocumentMapper;
+import br.com.unipds.feedback.infrastructure.adapter.outbound.repositories.mongo.entities.FeedbackDocumentEntity;
+import br.com.unipds.feedback.infrastructure.adapter.outbound.repositories.mongo.repository.FeedbackDocumentRepository;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
@@ -12,7 +12,6 @@ import java.util.List;
 import java.util.Optional;
 
 @Component
-@Profile("prod")
 public class FeedbackDocumentRepositoryJpaAdapter implements FeedbackRepositoryPort {
 
     public FeedbackDocumentRepositoryJpaAdapter(FeedbackDocumentRepository repository) {

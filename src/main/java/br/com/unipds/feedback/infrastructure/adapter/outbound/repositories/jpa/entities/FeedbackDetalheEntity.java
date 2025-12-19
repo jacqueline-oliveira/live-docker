@@ -1,4 +1,4 @@
-package br.com.unipds.feedback.infrastructure.adapter.outbound.repositories.entities;
+package br.com.unipds.feedback.infrastructure.adapter.outbound.repositories.jpa.entities;
 
 import jakarta.persistence.*;
 

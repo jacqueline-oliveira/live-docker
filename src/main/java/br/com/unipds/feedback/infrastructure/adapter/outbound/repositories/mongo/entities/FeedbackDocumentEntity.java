@@ -1,4 +1,4 @@
-package br.com.unipds.feedback.infrastructure.adapter.outbound.repositories.entities;
+package br.com.unipds.feedback.infrastructure.adapter.outbound.repositories.mongo.entities;
 
 import jakarta.persistence.Id;
 import org.springframework.data.mongodb.core.mapping.Document;

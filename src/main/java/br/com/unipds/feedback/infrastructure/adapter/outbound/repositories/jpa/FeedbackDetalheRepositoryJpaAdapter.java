@@ -2,17 +2,15 @@ package br.com.unipds.feedback.infrastructure.adapter.outbound.repositories.jpa;
 
 import br.com.unipds.feedback.application.port.output.FeedbackDetalheRepositoryPort;
 import br.com.unipds.feedback.domain.FeedbackDetalheDomain;
-import br.com.unipds.feedback.infrastructure.adapter.outbound.repositories.entities.FeedbackDetalheEntity;
+import br.com.unipds.feedback.infrastructure.adapter.outbound.repositories.jpa.entities.FeedbackDetalheEntity;
 import br.com.unipds.feedback.infrastructure.adapter.outbound.repositories.jpa.repository.FeedbackDetalheRepository;
 import br.com.unipds.feedback.infrastructure.adapter.outbound.repositories.mapper.FeedbackDetalheMapper;
-import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
 
 @Component
-@Profile("prod")
 public class FeedbackDetalheRepositoryJpaAdapter implements FeedbackDetalheRepositoryPort {
 
     private final FeedbackDetalheRepository repository;

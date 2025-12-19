@@ -1,7 +1,7 @@
 package br.com.unipds.feedback.infrastructure.adapter.outbound.repositories.mapper;
 
 import br.com.unipds.feedback.domain.FeedbackDetalheDomain;
-import br.com.unipds.feedback.infrastructure.adapter.outbound.repositories.entities.FeedbackDetalheEntity;
+import br.com.unipds.feedback.infrastructure.adapter.outbound.repositories.jpa.entities.FeedbackDetalheEntity;
 
 public class FeedbackDetalheMapper {
     private FeedbackDetalheMapper() {
